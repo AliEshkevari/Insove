@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insove</title>
+    <link rel="stylesheet" href="dist/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <script src="js/swiper-bundle.min.js" defer></script>
+    <script src="js/scrollreveal.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  <body class="overflow-x-hidden">
+    <main class="relative overflow-hidden">
+      <header class="pt-6 lg:flex lg:flex-col lg:items-center">
+        <div class="text-3xl w-min absolute right-4 top-4 min-[836px]:hidden">
+          <i
+            id="open-menu-btn"
+            class="fa fa-bars cursor-pointer text-textGray"
+          ></i>
+        </div>
+        <nav
+          id="mobile-menu"
+          class="fixed min-[836px]:hidden h-screen w-3/5 right-0 top-0 bg-gray-500 translate-x-[370px] min-[460px]:translate-x-[670px] duration-700 px-2 z-30"
+        >
+          <div class="text-2xl w-min min-[836px]:hidden">
+            <i
+              id="close-menu-btn"
+              class="fa fa-times cursor-pointer text-textLight duration-100 hover:scale-110"
+            ></i>
+          </div>
+          <ul
+            class="flex flex-col mx-auto my-14 gap-y-3 lg:gap-x-6 items-center justify-center py-2 px-5 text-gray-200"
+          >
+            <li
+              class="border-b-2 border-textBlue w-1/2 text-center text-gray-300 opacity-70 hover:text-[#edeef0] hover:opacity-100 cursor-pointer py-2 transition-all hover:w-full hover:border-gray-600"
+            >
+              <a href="#" class="block w-full">Home</a>
+            </li>
+            <li
+              class="border-b-2 border-textBlue w-1/2 text-center text-gray-300 opacity-70 hover:text-[#edeef0] hover:opacity-100 cursor-pointer py-2 transition-all hover:w-full hover:border-gray-600"
+            >
+              <a href="#" class="block w-full">Stats</a>
+            </li>
+            <li
+              class="border-b-2 border-textBlue w-1/2 text-center text-gray-300 opacity-70 hover:text-[#edeef0] hover:opacity-100 cursor-pointer py-2 transition-all hover:w-full hover:border-gray-600"
+            >
+              <a href="#" class="block w-full">Services</a>
+            </li>
+            <li
+              class="border-b-2 border-textBlue w-1/2 text-center text-gray-300 opacity-70 hover:text-[#edeef0] hover:opacity-100 cursor-pointer py-2 transition-all hover:w-full hover:border-gray-600"
+            >
+              <a href="#" class="block w-full">Booking</a>
+            </li>
+            <li
+              class="border-b-2 border-textBlue w-1/2 text-center text-gray-300 opacity-70 hover:text-[#edeef0] hover:opacity-100 cursor-pointer py-2 transition-all hover:w-full hover:border-gray-600"
+            >
+              <a href="#" class="block w-full">Customers</a>
+            </li>
+            <li
+              class="border-b-2 border-textBlue w-1/2 text-center text-gray-300 opacity-70 hover:text-[#edeef0] hover:opacity-100 cursor-pointer py-2 transition-all hover:w-full hover:border-gray-600"
+            >
+              <a href="#" class="block w-full">Team</a>
+            </li>
+            <li
+              class="border-b-2 border-textBlue w-1/2 text-center text-gray-300 opacity-70 hover:text-[#edeef0] hover:opacity-100 cursor-pointer py-2 transition-all hover:w-full hover:border-gray-600"
+            >
+              <a href="#" class="block w-full">Q & A</a>
+            </li>
+
+            <li
+              class="relative flex gap-x-2 items-center justify-center -order-1"
+            >
+              <i
+                id="search-icon"
+                class="fa fa-search group text-textBlue absolute right-3 cursor-pointer hover:scale-125 duration-200 active:scale-100"
+              ></i>
+              <input
+                id="search-input"
+                type="text"
+                placeholder="Search.."
+                class="placeholder:text-textGray bg-gray-300 rounded-2xl text-textGray px-3 py-2 outline-none"
+              />
+            </li>
+          </ul>
+        </nav>
+
+        <nav
+          id="desktop-menu"
+          class="hidden w-[1300px] max-[1300px]:w-[900px] min-[836px]:flex justify-center items-center min-[836px]:h-12 bg-[#fff] rounded-lg mx-auto absolute min-[836px]:top-[150px] min-[836px]:z-20 shadow-xl"
+        >
+          <ul
+            class="flex gap-x-3 max-[1300px]:gap-x-[1px] flex-row w-full justify-center"
+          >
+            <li
+              class="menu-item lg:border-r-[1px] border-slate-500 ps-7 max-[1300px]:ps-2 pe-7 max-[1300px]:pe-2"
+            >
+              <a
+                href="#"
+                class="current-page text-gray-600 text-[16px] hover:text-textBlue duration-200 text-center"
+                >Home</a
+              >
+            </li>
+            <li
+              class="menu-item lg:border-r-[1px] border-slate-500 ps-6 max-[1300px]:ps-2 pe-7 max-[1300px]:pe-2"
+            >
+              <a
+                href="#stats"
+                class="text-gray-600 text-[16px] hover:text-textBlue duration-200 text-center"
+                >Stats</a
+              >
+            </li>
+            <li
+              class="menu-item lg:border-r-[1px] border-slate-500 ps-6 max-[1300px]:ps-2 pe-7 max-[1300px]:pe-2"
+            >
+              <a
+                href="#services"
+                class="text-gray-600 text-[16px] hover:text-textBlue duration-200 text-center"
+                >Services</a
+              >
+            </li>
+            <li
+              class="menu-item lg:border-r-[1px] border-slate-500 ps-6 max-[1300px]:ps-2 pe-7 max-[1300px]:pe-2"
+            >
+              <a
+                href="#booking"
+                class="text-gray-600 text-[16px] hover:text-textBlue duration-200 text-center"
+                >Booking</a
+              >
+            </li>
+            <li
+              class="menu-item lg:border-r-[1px] border-slate-500 ps-6 max-[1300px]:ps-2 pe-7 max-[1300px]:pe-2"
+            >
+              <a
+                href="#customers"
+                class="text-gray-600 text-[16px] hover:text-textBlue duration-200 text-center"
+                >Customers</a
+              >
+            </li>
+            <li
+              class="menu-item lg:border-r-[1px] border-slate-500 ps-6 max-[1300px]:ps-2 pe-7 max-[1300px]:pe-2"
+            >
+              <a
+                href="#doctors"
+                class="text-gray-600 text-[16px] hover:text-textBlue duration-200 text-center"
+                >Team</a
+              >
+            </li>
+            <li
+              class="menu-item lg:border-r-[1px] border-slate-500 ps-6 max-[1300px]:ps-2 pe-7 max-[1300px]:pe-2"
+            >
+              <a
+                href="#answers"
+                class="text-gray-600 text-[16px] hover:text-textBlue duration-200 text-center"
+                >Q & A</a
+              >
+            </li>
+            <li
+              class="dropdown group menu-item lg:border-r-[1px] border-slate-500 ps-6 max-[1300px]:ps-2 pe-7 max-[1300px]:pe-2 relative"
+            >
+              <a
+                href="#"
+                class="text-gray-600 text-[16px] hover:text-textBlue duration-200 text-center"
+                >Pages ^</a
+              >
+              <ul
+                class="dropdown-menu group-hover:block hidden absolute min-w-[135px] -left-3 py-4"
+              >
+                <li class="bg-[#fff] py-2 text-center">
+                  <a
+                    href="#"
+                    class="text-gray-800 hover:text-textBlue duration-200"
+                    >ABOUT
+                  </a>
+                </li>
+                <li class="bg-[#fff] py-2 text-center">
+                  <a
+                    href="#"
+                    class="text-gray-800 hover:text-textBlue duration-200"
+                    >BLOG
+                  </a>
+                </li>
+
+                <li class="bg-[#fff] py-2 text-center">
+                  <a
+                    href="#"
+                    class="text-gray-800 hover:text-textBlue duration-200"
+                    >BOOKING
+                  </a>
+                </li>
+                <li class="bg-[#fff] py-2 text-center">
+                  <a
+                    href="#"
+                    class="text-gray-800 hover:text-textBlue duration-200"
+                    >SERVICES
+                  </a>
+                </li>
+                <li class="bg-[#fff] py-2 text-center">
+                  <a
+                    href="#"
+                    class="text-gray-800 hover:text-textBlue duration-200"
+                    >DEPARTMENTS</a
+                  >
+                </li>
+                <li class="bg-[#fff] py-2 text-center">
+                  <a
+                    href="#"
+                    class="text-gray-800 hover:text-textBlue duration-200"
+                    >GALLERY</a
+                  >
+                </li>
+                <li class="bg-[#fff] py-2 text-center">
+                  <a
+                    href="#"
+                    class="text-gray-800 hover:text-textBlue duration-200"
+                    >PRICING</a
+                  >
+                </li>
+                <li class="bg-[#fff] py-2 text-center">
+                  <a
+                    href="#"
+                    class="text-gray-800 hover:text-textBlue duration-200"
+                    >CONTACT</a
+                  >
+                </li>
+                <li class="bg-[#fff] py-2 text-center">
+                  <a
+                    href="#"
+                    class="text-gray-800 hover:text-textBlue duration-200"
+                    >OUR TEAM</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li
+              class="menu-item flex relative items-center justify-center gap-2 ps-6"
+            >
+              <i
+                id="desktop-search-icon"
+                class="fa fa-search text-textBlue cursor-pointer hover:scale-125 duration-200 active:scale-100"
+              ></i>
+              <input
+                id="desktop-search-input"
+                type="text"
+                placeholder="Search.."
+                class="outline-none pl-2 text-gray-600"
+              />
+            </li>
+          </ul>
+        </nav>
+
+        <section
+          class="header-container flex flex-col min-[836px]:flex-row min-[836px]:justify-between min-[836px]:w-full min-[836px]:px-10 justify-center items-center gap-y-6 mt-8 min-[836px]:mt-2"
+        >
+          <div class="logo">
+            <img src="assets/img/header/logo.svg" alt="Insove Logo" />
+          </div>
+          <div
+            class="header-details flex flex-col lg:flex-row lg:gap-x-10 items-center justify-center gap-y-2"
+          >
+            <div
+              class="header-info flex text-[18px] justify-center items-center gap-x-2"
+            >
+              <i class="fa fa-map-marker text-textBlue"></i>
+              <span class="text-textGray">123 Arling, Miola, NY</span>
+            </div>
+            <div
+              class="header-info flex text-[18px] justify-center items-center gap-x-2"
+            >
+              <i class="fa fa-phone text-textBlue"></i>
+              <span class="text-textGray">(+487) 384 9452</span>
+            </div>
+          </div>
+          <div>
+            <button
+              class="text-textGray p-6 border-2 border-textBlue rounded-[30px] hover:border-textGray duration-200"
+            >
+              BOOK NOW
+            </button>
+          </div>
+        </section>
+      </header>
+
+      <section class="hero py-12 my-16 bg-slate-200 px-8">
+        <div
+          class="hero-container flex flex-col lg:flex-row gap-y-8 lg:gap-y-0"
+        >
+          <div
+            class="hero-left-part flex flex-col justify-center items-center lg:justify-start lg:items-start gap-y-6 basis-1/2"
+          >
+            <p
+              class="bg-white w-1/2 lg:w-1/4 text-center py-2 rounded-[2rem] flex justify-center items-center gap-x-2"
+            >
+              <i class="fa fa-heartbeat text-textBlue"></i>
+              <span class="text-gray-500">LIVE YOUR LIFE</span>
+            </p>
+            <h2
+              class="text-[3rem] text-center lg:text-left lg:text-[5rem] font-sans text-gray-700 font-semibold"
+            >
+              We Care About Your Health
+            </h2>
+            <p class="text-gray-500 text-lg text-center lg:text-left">
+              Vitae aliquam vestibulum elit adipiscing massa diam in dignissim.
+              Risus tellus libero elementum aliquam etiam. Lectus adipiscing est
+              auctor mi quisque nunc non viverra est.
+            </p>
+            <button
+              class="w-1/2 lg:w-1/4 px-6 py-4 border-2 border-textBlue rounded-3xl text-gray-700 hover:border-gray-600 duration-200"
+            >
+              CONTACT US
+            </button>
+          </div>
+          <div class="hero-right-part basis-1/2">
+            <img src="assets/img/hero/img.png" />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="stats"
+        class="statistics flex items-center justify-center content-center"
+      >
+        <div class="statistics-container w-5/6">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-4 items-center gap-y-4 lg:gap-x-4 justify-center"
+          >
+            <div>
+              <h5
+                class="text-textBlue opacity-70 hover:opacity-100 text-[56px] duration-300 text-center"
+              >
+                +5120
+              </h5>
+              <p class="text-gray-600 text-center text-[20px]">
+                Happy Patients
+              </p>
+            </div>
+            <div>
+              <h5
+                class="text-textBlue opacity-70 hover:opacity-100 text-[56px] duration-300 text-center"
+              >
+                +26
+              </h5>
+              <p class="text-gray-600 text-center text-[20px]">
+                Total Branches
+              </p>
+            </div>
+            <div>
+              <h5
+                class="text-textBlue opacity-70 hover:opacity-100 text-[56px] duration-300 text-center"
+              >
+                +53
+              </h5>
+              <p class="text-gray-600 text-center text-[20px]">
+                Senior Doctors
+              </p>
+            </div>
+            <div>
+              <h5
+                class="text-textBlue opacity-70 hover:opacity-100 text-[56px] duration-300 text-center"
+              >
+                +10
+              </h5>
+              <p class="text-gray-600 text-center text-[20px]">
+                Years Experience
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="services"
+        class="services flex items-center justify-center py-8 px-6 mt-16 bg-[url('/assets/img/services/bg.svg')] bg-cover bg-no-repeat"
+      >
+        <div
+          class="services-container flex justify-center items-center flex-col"
+        >
+          <div
+            class="services-description-container flex flex-col lg:flex-row lg:gap-x-10 justify-center gap-y-4"
+          >
+            <h4
+              class="text-slate-100 text-center lg:text-left text-[28px] lg:text-[34px] basis-1/3"
+            >
+              Our Best Services For Your Solution
+            </h4>
+            <p class="basis-1/3 text-slate-200 text-[18px] lg:text-[22px]">
+              Vitae aliquam vestibulum elit adipiscing massa diam in dignissim.
+              Risus tellus libero elementum aliquam etiam. Lectus adipiscing est
+              auctor mi quisque nunc non viverra est.
+            </p>
+          </div>
+          <div
+            class="mt-10 services-list-container grid grid-cols-1 lg:grid-cols-4 gap-y-8 lg:gap-x-8"
+          >
+            <div
+              class="service bg-slate-200 p-10 rounded-[10px] flex items-center flex-col gap-4 duration-500 relative content-none overflow-hidden before:absolute before:top-1/2 before:left-1/2 before:transform before:-translate-x-50 before:-translate-y-50 before:scale-0 before:w-[150%] before:h-[150%] before:bg-textBlue hover:text-textLight before:transition-[transform] before:duration-150 before:rounded-full before:-z-50 before:hover:transform before:hover:tanslate-x-[-50%] before:hover:translate-y-[-90%] before:hover:scale-[210%]"
+            >
+              <span class="fa fa-tachometer text-textBlue"></span>
+              <h6 class="text-[22px] text-center">General Practitioners</h6>
+              <p class="text-center">
+                Aliquam etiam lectus adipiscing est auctor mi quisque non
+                viverra
+              </p>
+            </div>
+            <div
+              class="service bg-slate-200 p-10 rounded-[10px] flex items-center flex-col gap-4 duration-500 relative content-none overflow-hidden before:absolute before:top-1/2 before:left-1/2 before:transform before:-translate-x-50 before:-translate-y-50 before:scale-0 before:w-[150%] before:h-[150%] before:bg-textBlue hover:text-textLight before:transition-[transform] before:duration-150 before:rounded-full before:-z-50 before:hover:transform before:hover:tanslate-x-[-50%] before:hover:translate-y-[-90%] before:hover:scale-[210%]"
+            >
+              <i class="fa fa-support text-textBlue"></i>
+              <h6 class="text-[22px] text-center">Pregnancy Support</h6>
+              <p class="text-center">
+                Aliquam etiam lectus adipiscing est auctor mi quisque non
+                viverra
+              </p>
+            </div>
+            <div
+              class="service bg-slate-200 p-10 rounded-[10px] flex items-center flex-col gap-4 duration-500 relative content-none overflow-hidden before:absolute before:top-1/2 before:left-1/2 before:transform before:-translate-x-50 before:-translate-y-50 before:scale-0 before:w-[150%] before:h-[150%] before:bg-textBlue hover:text-textLight before:transition-[transform] before:duration-150 before:rounded-full before:-z-50 before:hover:transform before:hover:tanslate-x-[-50%] before:hover:translate-y-[-90%] before:hover:scale-[210%]"
+            >
+              <i class="fa fa-spoon text-textBlue"></i>
+              <h6 class="text-[22px] text-center">Nutritional Support</h6>
+              <p class="text-center">
+                Aliquam etiam lectus adipiscing est auctor mi quisque non
+                viverra
+              </p>
+            </div>
+            <div
+              class="service bg-slate-200 p-10 rounded-[10px] flex items-center flex-col gap-4 duration-500 relative content-none overflow-hidden before:absolute before:top-1/2 before:left-1/2 before:transform before:-translate-x-50 before:-translate-y-50 before:scale-0 before:w-[150%] before:h-[150%] before:bg-textBlue hover:text-textLight before:transition-[transform] before:duration-150 before:rounded-full before:-z-50 before:hover:transform before:hover:tanslate-x-[-50%] before:hover:translate-y-[-90%] before:hover:scale-[210%]"
+            >
+              <i class="fa fa-medkit text-textBlue"></i>
+              <h6 class="text-[22px] text-center">Pharmaceutical Care</h6>
+              <p class="text-center">
+                Aliquam etiam lectus adipiscing est auctor mi quisque non
+                viverra
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="booking"
+        class="reservation my-16 flex items-center justify-center"
+      >
+        <div
+          class="reservation-container container w-full flex flex-col items-center justify-center gap-y-6"
+        >
+          <div class="reservation-title">
+            <h4 class="text-[28px] lg:text-[36px] text-center text-gray-800">
+              Book Appointment or call:
+              <span
+                class="text-textBlue opacity-70 hover:opacity-100 transition-opacity block lg:inline"
+                >(+487) 384 9452</span
+              >
+            </h4>
+          </div>
+          <div
+            class="reservation-info container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-y-4"
+          >
+            <div class="flex items-center justify-center">
+              <select
+                name=""
+                id=""
+                class="py-3 rounded-lg w-5/6 cursor-pointer px-4 border-2 border-slate-400"
+              >
+                <option value="0" class="cursor-pointer">
+                  Select Department
+                </option>
+                <option value="1" class="cursor-pointer">
+                  Department of Physiotherapy
+                </option>
+                <option value="2" class="cursor-pointer">
+                  Department of Dentistry
+                </option>
+                <option value="3" class="cursor-pointer">ENT Department</option>
+                <option value="4" class="cursor-pointer">
+                  Department of Pharmacy
+                </option>
+                <option value="5" class="cursor-pointer">
+                  Nursing Department
+                </option>
+              </select>
+            </div>
+
+            <div class="flex items-center justify-center">
+              <select
+                name=""
+                id=""
+                class="py-3 rounded-lg w-5/6 cursor-pointer px-4 border-2 border-slate-400"
+              >
+                <option value="0">Select Doctor</option>
+                <option value="1">William Davies</option>
+                <option value="2">Charlotte Taylor</option>
+                <option value="3">William Jones</option>
+              </select>
+            </div>
+
+            <div class="flex justify-center items-center">
+              <input
+                type="text"
+                placeholder="Full Name"
+                class="py-3 w-5/6 rounded-lg px-1 border-[1px] border-slate-400"
+              />
+            </div>
+            <div class="flex justify-center items-center">
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                class="py-3 w-5/6 rounded-lg px-1 border-[1px] border-slate-400"
+              />
+            </div>
+            <div class="flex justify-center items-center">
+              <input
+                type="date"
+                class="py-3 w-5/6 rounded-lg px-1 border-[1px] border-slate-400"
+              />
+            </div>
+            <div class="flex justify-center items-center">
+              <input
+                type="time"
+                class="py-3 w-5/6 rounded-lg px-1 border-[1px] border-slate-400"
+              />
+            </div>
+          </div>
+          <button
+            class="w-4/6 lg:w-1/4 px-4 py-4 border-2 border-textBlue rounded-3xl text-gray-700 hover:border-gray-600 duration-200 mt-2 lg:ml-16 self-center lg:self-start"
+          >
+            BOOK AN APPOINTMENT
+          </button>
+        </div>
+      </section>
+
+      <section
+        id="customers"
+        class="customers bg-[url('/assets/img/testimonials/bg.svg')] bg-cover bg-right bg-no-repeat py-12 xl:min-h-[595px] xl:py-0"
+      >
+        <div class="customers-container container mx-auto flex">
+          <div class="left-part basis-1/2 hidden xl:flex">
+            <img src="./assets/img/testimonials/img.png" alt="" />
+          </div>
+          <div
+            class="right-part max-w-[98%] xl:max-w-[710px] flex items-center"
+          >
+            <div class="swiper h-[400px]">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="h-full flex flex-col justify-center">
+                    <div class="max-w-[680px] mx-auto text-center xl:text-left">
+                      <p
+                        class="font-light relative text-[17px] md:text-[22px] text-gray-500 leading-[190%] text-center xl:text-left before:bg-[url('/assets/icons/testimonials/quote-left.svg')] before:bg-contain before:bg-bottom before:inline-block before:top-0 before:w-10 before:h-10 before:bg-no-repeat after:bg-[url('/assets/icons/testimonials/quote-right.svg')] after:bg-contain after:bg-bottom after:inline-block after:top-0 after:w-10 after:h-10 after:bg-no-repeat mb-3"
+                      >
+                        <span>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Architecto nulla atque sed iusto quae
+                          temporibus. Lorem ipsum dolor sit amet consectetur
+                          adipisicing elit. Architecto nulla atque sed iustoquae
+                          temporibus.
+                        </span>
+                      </p>
+                      <div class="text-[26px] text-gray-500 font-bold my-2">
+                        James Rodrigo
+                      </div>
+                      <div
+                        class="text-gray-400 lg:text-[26px] font-medium uppercase mb-4"
+                      >
+                        Customer
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="h-full flex flex-col justify-center">
+                    <div class="max-w-[680px] mx-auto text-center xl:text-left">
+                      <p
+                        class="font-light relative text-[17px] md:text-[22px] text-gray-500 leading-[190%] text-center xl:text-left before:bg-[url('/assets/icons/testimonials/quote-left.svg')] before:bg-contain before:bg-bottom before:inline-block before:top-0 before:w-10 before:h-10 before:bg-no-repeat after:bg-[url('/assets/icons/testimonials/quote-right.svg')] after:bg-contain after:bg-bottom after:inline-block after:top-0 after:w-10 after:h-10 after:bg-no-repeat mb-3"
+                      >
+                        <span>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Architecto nulla atque sed iusto quae
+                          temporibus. Lorem ipsum dolor sit amet consectetur
+                          adipisicing elit. Architecto nulla atque sed iustoquae
+                          temporibus.
+                        </span>
+                      </p>
+                      <div class="text-[26px] text-gray-500 font-bold my-2">
+                        Emma Fergusen
+                      </div>
+                      <div
+                        class="text-gray-400 lg:text-[26px] font-medium uppercase mb-4"
+                      >
+                        Customer
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="h-full flex flex-col justify-center">
+                    <div class="max-w-[680px] mx-auto text-center xl:text-left">
+                      <p
+                        class="font-light relative text-[17px] md:text-[22px] text-gray-500 leading-[190%] text-center xl:text-left before:bg-[url('/assets/icons/testimonials/quote-left.svg')] before:bg-contain before:bg-bottom before:inline-block before:top-0 before:w-10 before:h-10 before:bg-no-repeat after:bg-[url('/assets/icons/testimonials/quote-right.svg')] after:bg-contain after:bg-bottom after:inline-block after:top-0 after:w-10 after:h-10 after:bg-no-repeat mb-3"
+                      >
+                        <span>
+                          Lorem ipsum dolor sit amet consectetur adipisicing
+                          elit. Architecto nulla atque sed iusto quae
+                          temporibus. Lorem ipsum dolor sit amet consectetur
+                          adipisicing elit. Architecto nulla atque sed iustoquae
+                          temporibus.
+                        </span>
+                      </p>
+                      <div
+                        class="text-[24px] lg:text-[30px] text-gray-500 font-bold my-2"
+                      >
+                        Michael Schultz
+                      </div>
+                      <div
+                        class="text-gray-400 lg:text-[26px] font-medium uppercase mb-4"
+                      >
+                        Customer
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="doctors" class="doctors my-[2rem]">
+        <h2
+          class="doctors-title mb-[30px] lg:ml-[65px] text-center xl:text-left text-[42px] text-gray-700 font-extrabold"
+        >
+          Our Team
+        </h2>
+        <div
+          class="doctors-container container flex justify-center items-center mx-auto"
+        >
+          <div class="swiper min-h-[650px] lg:min-h-[400px]" id="mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="lg:px-12 mx-auto">
+                  <div class>
+                    <div
+                      class="doctor flex flex-1 flex-col lg:flex-row items-center gap-y-4"
+                    >
+                      <div class="doctor-left flex-1">
+                        <img src="assets/img/team/doctor-1.png" />
+                      </div>
+                      <div
+                        class="doctor-right flex flex-1 flex-col justify-center items-center lg:items-start"
+                      >
+                        <h4
+                          class="mb-[10px] text-[24px] text-gray-700 font-semibold"
+                        >
+                          Dr. Leslie Taylor
+                        </h4>
+                        <span class="font-medium text-[#9ab4b7] mb-[20px]"
+                          >PEDIATRICIAN</span
+                        >
+                        <p
+                          class="font-light mb-[26px] max-w-[320px] text-center lg:text-left"
+                        >
+                          Lorem ipsum, dolor sit amet consectetur adipisicing
+                          elit. Delectus explicabo asperiores atque.
+                        </p>
+                        <div
+                          class="social-media flex items-center text-[30px] gap-x-5"
+                        >
+                          <i
+                            class="fa fa-facebook-official transition-colors cursor-pointer hover:text-[#4267B2]"
+                          ></i>
+                          <i
+                            class="fa fa-twitter transition-colors cursor-pointer hover:text-[#1DA1F2]"
+                          ></i>
+                          <i
+                            class="fa fa-instagram transition-colors cursor-pointer hover:text-[#C13584]"
+                          ></i>
+                          <i
+                            class="fa fa-youtube-play transition-colors cursor-pointer hover:text-[#FF0000]"
+                          ></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="lg:px-12">
+                  <div
+                    class="doctor flex flex-1 flex-col lg:flex-row items-center gap-y-4"
+                  >
+                    <div class="doctor-left flex-1">
+                      <img src="assets/img/team/doctor-2.png" />
+                    </div>
+                    <div
+                      class="doctor-right flex flex-1 flex-col justify-center items-center lg:items-start"
+                    >
+                      <h4
+                        class="mb-[10px] text-[24px] text-gray-700 font-semibold"
+                      >
+                        Dr. Zachary Brown
+                      </h4>
+                      <span class="font-medium text-[#9ab4b7] mb-[20px]"
+                        >CARDIOLOGIST</span
+                      >
+                      <p
+                        class="font-light mb-[26px] max-w-[320px] text-center lg:text-left"
+                      >
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Delectus explicabo asperiores atque.
+                      </p>
+                      <div
+                        class="social-media flex items-center text-[30px] gap-x-5"
+                      >
+                        <i
+                          class="fa fa-facebook-official transition-colors cursor-pointer hover:text-[#4267B2]"
+                        ></i>
+                        <i
+                          class="fa fa-twitter transition-colors cursor-pointer hover:text-[#1DA1F2]"
+                        ></i>
+                        <i
+                          class="fa fa-instagram transition-colors cursor-pointer hover:text-[#C13584]"
+                        ></i>
+                        <i
+                          class="fa fa-youtube-play transition-colors cursor-pointer hover:text-[#FF0000]"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="lg:px-12">
+                  <div
+                    class="doctor flex flex-1 flex-col lg:flex-row items-center gap-y-4"
+                  >
+                    <div class="doctor-left flex-1">
+                      <img
+                        src="https://demo.templatesjungle.com/insove/images/team-item2.jpg"
+                        class="h-[337px] rounded-lg"
+                      />
+                    </div>
+                    <div
+                      class="doctor-right flex flex-1 flex-col justify-center items-center lg:items-start"
+                    >
+                      <h4
+                        class="mb-[10px] text-[24px] text-gray-700 font-semibold"
+                      >
+                        Dr. Isabella Davies
+                      </h4>
+                      <span class="font-medium text-[#9ab4b7] mb-[20px]"
+                        >GYNECOLOGIST</span
+                      >
+                      <p
+                        class="font-light mb-[26px] max-w-[320px] text-center lg:text-left"
+                      >
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Delectus explicabo asperiores atque.
+                      </p>
+                      <div
+                        class="social-media flex items-center text-[30px] gap-x-5"
+                      >
+                        <i
+                          class="fa fa-facebook-official transition-colors cursor-pointer hover:text-[#4267B2]"
+                        ></i>
+                        <i
+                          class="fa fa-twitter transition-colors cursor-pointer hover:text-[#1DA1F2]"
+                        ></i>
+                        <i
+                          class="fa fa-instagram transition-colors cursor-pointer hover:text-[#C13584]"
+                        ></i>
+                        <i
+                          class="fa fa-youtube-play transition-colors cursor-pointer hover:text-[#FF0000]"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="answers" class="answers">
+        <div class="answers-container container mx-auto">
+          <div class="answer-header">
+            <h2
+              class="text-center text-[26px] lg:text-[42px] text-gray-700 font-extrabold mb-[40px]"
+            >
+              We've Got Answers
+            </h2>
+          </div>
+          <div class="questions-wrapper max-w-5xl mx-auto">
+            <div
+              class="questions px-[30px] pt-7 pb-4 border-b cursor-pointer select-none"
+            >
+              <div class="flex items-center justify-between mb-[10px]">
+                <h5 class="capitalize">
+                  why to believe with insove medical healthcare
+                </h5>
+                <div class="faqBtn w-20 h-8 flex items-center justify-center">
+                  <i class="fa fa-plus"></i>
+                </div>
+              </div>
+              <div
+                class="answer hide h-0 overflow-hidden transition-all duration-300"
+              >
+                <p class="text-gray-500">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+                  adipisci ipsa molestias quam maxime! Recusandae dolorem sed
+                  rem enim cumque?
+                </p>
+              </div>
+            </div>
+            <div
+              class="questions px-[30px] pt-7 pb-4 border-b cursor-pointer select-none"
+            >
+              <div class="flex items-center justify-between mb-[10px]">
+                <h5 class="capitalize">
+                  Will we get healthcare updates after surgery?
+                </h5>
+                <div class="faqBtn w-20 h-8 flex items-center justify-center">
+                  <i class="fa fa-plus"></i>
+                </div>
+              </div>
+              <div class="answer hide h-0 overflow-hidden">
+                <p class="text-gray-500">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+                  adipisci ipsa molestias quam maxime! Recusandae dolorem sed
+                  rem enim cumque?
+                </p>
+              </div>
+            </div>
+            <div
+              class="questions px-[30px] pt-7 pb-4 border-b cursor-pointer select-none"
+            >
+              <div class="flex items-center justify-between mb-[10px]">
+                <h5 class="capitalize">
+                  What preparations are necessary before undergoing surgery?
+                </h5>
+                <div class="faqBtn w-20 h-8 flex items-center justify-center">
+                  <i class="fa fa-plus"></i>
+                </div>
+              </div>
+              <div class="answer hide h-0 overflow-hidden">
+                <p class="text-gray-500">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+                  adipisci ipsa molestias quam maxime! Recusandae dolorem sed
+                  rem enim cumque?
+                </p>
+              </div>
+            </div>
+            <div
+              class="questions px-[30px] pt-7 pb-4 border-b cursor-pointer select-none"
+            >
+              <div class="flex items-center justify-between mb-[10px]">
+                <h5 class="capitalize">
+                  How long will it take to recover after the surgery?
+                </h5>
+                <div class="faqBtn w-20 h-8 flex items-center justify-center">
+                  <i class="fa fa-plus"></i>
+                </div>
+              </div>
+              <div class="answer hide h-0 overflow-hidden">
+                <p class="text-gray-500">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+                  adipisci ipsa molestias quam maxime! Recusandae dolorem sed
+                  rem enim cumque?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="department"
+        class="department bg-[url('/assets/img/departments/bg.svg')] mt-16 min-h-[100vh] flex justify-center items-center"
+      >
+        <div class="department-container flex items-center gap-x-2 h-full">
+          <div
+            class="department-left basis-1/3 flex justify-center items-center py-10 px-2 lg:px-0"
+          >
+            <div class="department-left-container">
+              <ul class="flex flex-col justify-center gap-y-8">
+                <li class="department-link text-center lg:text-left">
+                  <a
+                    class="text-textBlue hover:text-textBlue duration-200 department-links cursor-pointer text-[17px] lg:text-[22px]"
+                    onclick="changeColor(0); changeContext('laboratory');"
+                    >LABORATORY ANALYSIS</a
+                  >
+                </li>
+                <li class="department-link text-center lg:text-left">
+                  <a
+                    class="text-[#9ab4b7] hover:text-textBlue duration-200 department-links cursor-pointer text-[17px] lg:text-[22px]"
+                    onclick="changeColor(1); changeContext('cardiology');"
+                    >CARDIOLOGY CLINIC</a
+                  >
+                </li>
+                <li class="department-link text-center lg:text-left">
+                  <a
+                    class="text-[#9ab4b7] hover:text-textBlue duration-200 department-links cursor-pointer text-[17px] lg:text-[22px]"
+                    onclick="changeColor(2); changeContext('gynecology')"
+                    >GYNECOLOGY CLINIC</a
+                  >
+                </li>
+                <li class="department-link text-center lg:text-left">
+                  <a
+                    class="text-[#9ab4b7] hover:text-textBlue duration-200 department-links cursor-pointer text-[17px] lg:text-[22px]"
+                    onclick="changeColor(3); changeContext('pathology');"
+                    >PATHOLOGY CLINIC</a
+                  >
+                </li>
+                <li class="department-link text-center lg:text-left">
+                  <a
+                    class="text-[#9ab4b7] hover:text-textBlue duration-200 department-links cursor-pointer text-[17px] lg:text-[22px]"
+                    onclick="changeColor(4); changeContext('pediatrics')"
+                    >PEDIATRICS CLINIC</a
+                  >
+                </li>
+                <li class="department-link text-center lg:text-left">
+                  <a
+                    class="text-[#9ab4b7] hover:text-textBlue duration-200 department-links cursor-pointer text-[17px] lg:text-[22px]"
+                    onclick="changeColor(5); changeContext('neurology')"
+                    >NEUROLOGY CLINIC</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="department-right basis-1/2 py-10">
+            <div
+              class="department-right-container flex flex-col gap-y-4 department-context transition-opacity"
+              id="laboratory-info"
+            >
+              <h2
+                class="text-[28px] lg:text-[36px] text-center lg:text-left text-gray-700 font-extrabold"
+              >
+                Laboratory Analysis
+              </h2>
+              <div class="flex flex-col gap-y-2 text-center lg:text-left">
+                <p class="text-gray-500 text-[18px]">
+                  Laboratory analysis means a test performed by a labo- ratory
+                  on body fluid, tissue, or excretion for the purpose of
+                  determining the presence, absence, or concentration of various
+                  substances in the human body.
+                </p>
+                <p class="text-gray-500 text-[18px]">
+                  Sampling is the process of collecting a portion of an
+                  environmental medium as representative of the locally
+                  remaining medium. The collected portion of the medium is then
+                  analyzed to determine the radionuclide concentration.
+                </p>
+              </div>
+              <div>
+                <ul
+                  class="flex flex-col lg:flex-row items-center lg:gap-x-6 gap-y-6 mt-2"
+                >
+                  <li class="department-minimenu-item">
+                    <a
+                      class="text-[18px] text-textBlue hover:text-textGray transition-colors"
+                      href="#"
+                      >Neurocritical Care</a
+                    >
+                  </li>
+                  <li class="department-minimenu-item">
+                    <a
+                      class="text-[18px] text-textBlue hover:text-textGray transition-colors"
+                      href="#"
+                      >Neuro Oncology</a
+                    >
+                  </li>
+                  <li class="department-minimenu-item">
+                    <a
+                      class="text-[18px] text-textBlue hover:text-textGray transition-colors"
+                      href="#"
+                      >Geriatric Neurology</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <button
+                class="w-4/6 mt-2 lg:w-1/4 px-6 py-4 text-[#fff] border-2 bg-textBlue rounded-3xl hover:bg-gray-600 duration-200 self-center lg:self-auto"
+              >
+                Learn More
+              </button>
+            </div>
+
+            <div
+              class="department-right-container hidden opacity-0 flex-col gap-y-4 department-context transition-opacity"
+              id="cardiology-info"
+            >
+              <h2
+                class="text-[28px] lg:text-[36px] text-gray-700 text-center lg:text-left font-extrabold"
+              >
+                Cardiology Clinic
+              </h2>
+              <div class="flex flex-col gap-y-2 text-center lg:text-left">
+                <p class="text-gray-500 text-[18px]">
+                  Vel non viverra ligula odio ornare turpis mauris. Odio
+                  aliquam, tincidunt ut vitae elit risus. Tempor egestas
+                  condimentum et ac rutrum dui, odio.Vel non viverra ligula odio
+                  ornare turpis mauris. Aliquam, tincidunt ut vitae elit risus.
+                </p>
+                <p class="text-gray-500 text-[18px]">
+                  Tempor egestas condimentum et ac rutrum dui, odio. Non viverra
+                  ligula odio ornare turpis mauris. Dio a Vel non viverra ligula
+                  odio ornare turpis mauris.
+                </p>
+              </div>
+              <div>
+                <ul
+                  class="flex flex-col lg:flex-row items-center lg:gap-x-6 gap-y-6 mt-2"
+                >
+                  <li class="department-minimenu-item">
+                    <a
+                      class="text-[18px] text-textBlue hover:text-textGray transition-colors"
+                      href="#"
+                      >Neurocritical Care</a
+                    >
+                  </li>
+                  <li class="department-minimenu-item">
+                    <a
+                      class="text-[18px] text-textBlue hover:text-textGray transition-colors"
+                      href="#"
+                      >Neuro Oncology</a
+                    >
+                  </li>
+                  <li class="department-minimenu-item">
+                    <a
+                      class="text-[18px] text-textBlue hover:text-textGray transition-colors"
+                      href="#"
+                      >Geriatric Neurology</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <button
+                class="w-4/6 mt-2 lg:w-1/4 px-6 py-4 text-[#fff] border-2 bg-textBlue rounded-3xl hover:bg-gray-600 duration-200 self-center lg:self-auto"
+              >
+                Learn More
+              </button>
+            </div>
+
+            <div
+              class="department-right-container hidden opacity-0 flex-col gap-y-4 department-context transition-opacity"
+              id="gynecology-info"
+            >
+              <h2
+                class="text-[28px] lg:text-[36px] text-gray-700 text-center lg:text-left font-extrabold"
+              >
+                Gynecology Clinic
+              </h2>
+              <div class="flex flex-col gap-y-2 text-center lg:text-left">
+                <p class="text-gray-500 text-[18px]">
+                  Vel non viverra ligula odio ornare turpis mauris. Odio
+                  aliquam, tincidunt ut vitae elit risus. Tempor egestas
+                  condimentum et ac rutrum dui, odio.Vel non viverra ligula odio
+                  ornare turpis mauris. Aliquam, tincidunt ut vitae elit risus.
+                </p>
+              </div>
+              <div>
+                <ul
+                  class="flex flex-col lg:flex-row items-center lg:gap-x-6 gap-y-6 mt-2"
+                >
+                  <li class="department-minimenu-item">
+                    <a
+                      class="text-[18px] text-textBlue hover:text-textGray transition-colors"
+                      href="#"
+                      >Neurocritical Care</a
+                    >
+                  </li>
+                  <li class="department-minimenu-item">
+                    <a
+                      class="text-[18px] text-textBlue hover:text-textGray transition-colors"
+                      href="#"
+                      >Neuro Oncology</a
+                    >
+                  </li>
+                  <li class="department-minimenu-item">
+                    <a
+                      class="text-[18px] text-textBlue hover:text-textGray transition-colors"
+                      href="#"
+                      >Geriatric Neurology</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <button
+                class="w-4/6 mt-2 lg:w-1/4 px-6 py-4 text-[#fff] border-2 bg-textBlue rounded-3xl hover:bg-gray-600 duration-200 self-center lg:self-auto"
+              >
+                Learn More
+              </button>
+            </div>
+
+            <div
+              class="department-right-container hidden opacity-0 flex-col gap-y-4 department-context transition-opacity"
+              id="pathology-info"
+            >
+              <h2
+                class="text-[28px] lg:text-[36px] text-gray-700 text-center lg:text-left font-extrabold"
+              >
+                Pathology Clinic
+              </h2>
+              <div class="flex flex-col gap-y-2 text-center lg:text-left">
+                <p class="text-gray-500 text-[18px]">
+                  Vel non viverra ligula odio ornare turpis mauris. Odio
+                  aliquam, tincidunt ut vitae elit risus. Tempor egestas
+                  condimentum et ac rutrum dui, odio.Vel non viverra ligula odio
+                  ornare turpis mauris. Aliquam, tincidunt ut vitae elit risus.
+                </p>
+              </div>
+              <div>
+                <ul
+                  class="flex flex-col lg:flex-row items-center lg:gap-x-6 gap-y-6 mt-2"
+                >
+                  <li class="department-minimenu-item">
+                    <a
+                      class="text-[18px] text-textBlue hover:text-textGray transition-colors"
+                      href="#"
+                      >Neurocritical Care</a
+                    >
+                  </li>
+                  <li class="department-minimenu-item">
+                    <a
+                      class="text-[18px] text-textBlue hover:text-textGray transition-colors"
+                      href="#"
+                      >Neuro Oncology</a
+                    >
+                  </li>
+                  <li class="department-minimenu-item">
+                    <a
+                      class="text-[18px] text-textBlue hover:text-textGray transition-colors"
+                      href="#"
+                      >Geriatric Neurology</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <button
+                class="w-4/6 mt-2 lg:w-1/4 px-6 py-4 text-[#fff] border-2 bg-textBlue rounded-3xl hover:bg-gray-600 duration-200 self-center lg:self-auto"
+              >
+                Learn More
+              </button>
+            </div>
+
+            <div
+              class="department-right-container hidden opacity-0 flex-col gap-y-4 department-context transition-opacity"
+              id="pediatrics-info"
+            >
+              <h2
+                class="text-[28px] lg:text-[36px] text-gray-700 text-center lg:text-left font-extrabold"
+              >
+                Pediatrics Clinic
+              </h2>
+              <div class="flex flex-col gap-y-2 text-center lg:text-left">
+                <p class="text-gray-500 text-[18px]">
+                  Vel non viverra ligula odio ornare turpis mauris. Odio
+                  aliquam, tincidunt ut vitae elit risus. Tempor egestas
+                  condimentum et ac rutrum dui, odio.Vel non viverra ligula odio
+                  ornare turpis mauris. Aliquam, tincidunt ut vitae elit risus.
+                </p>
+                <p class="text-gray-500 text-[18px]">
+                  Tempor egestas condimentum et ac rutrum dui, odio. Non viverra
+                  ligula odio ornare turpis mauris. Dio a Vel non viverra ligula
+                  odio ornare turpis mauris.
+                </p>
+              </div>
+              <div>
+                <ul
+                  class="flex flex-col lg:flex-row items-center lg:gap-x-6 gap-y-6 mt-2"
+                >
+                  <li class="department-minimenu-item">
+                    <a
+                      class="text-[18px] text-textBlue hover:text-textGray transition-colors"
+                      href="#"
+                      >Neurocritical Care</a
+                    >
+                  </li>
+                  <li class="department-minimenu-item">
+                    <a
+                      class="text-[18px] text-textBlue hover:text-textGray transition-colors"
+                      href="#"
+                      >Neuro Oncology</a
+                    >
+                  </li>
+                  <li class="department-minimenu-item">
+                    <a
+                      class="text-[18px] text-textBlue hover:text-textGray transition-colors"
+                      href="#"
+                      >Geriatric Neurology</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <button
+                class="w-4/6 mt-2 lg:w-1/4 px-6 py-4 text-[#fff] border-2 bg-textBlue rounded-3xl hover:bg-gray-600 duration-200 self-center lg:self-auto"
+              >
+                Learn More
+              </button>
+            </div>
+
+            <div
+              class="department-right-container hidden opacity-0 flex-col gap-y-4 department-context transition-opacity"
+              id="neurology-info"
+            >
+              <h2
+                class="text-[28px] lg:text-[36px] text-gray-700 text-center lg:text-left font-extrabold"
+              >
+                Neurology Clinic
+              </h2>
+              <div class="flex flex-col gap-y-2 text-center lg:text-left">
+                <p class="text-gray-500 text-[18px]">
+                  Vel non viverra ligula odio ornare turpis mauris. Odio
+                  aliquam, tincidunt ut vitae elit risus. Tempor egestas
+                  condimentum et ac rutrum dui, odio.Vel non viverra ligula odio
+                  ornare turpis mauris. Aliquam, tincidunt ut vitae elit risus.
+                </p>
+                <p class="text-gray-500 text-[18px]">
+                  Tempor egestas condimentum et ac rutrum dui, odio. Non viverra
+                  ligula odio ornare turpis mauris. Dio a Vel non viverra ligula
+                  odio ornare turpis mauris.
+                </p>
+              </div>
+              <div>
+                <ul
+                  class="flex flex-col lg:flex-row items-center lg:gap-x-6 gap-y-6 mt-2"
+                >
+                  <li class="department-minimenu-item">
+                    <a
+                      class="text-[18px] text-textBlue hover:text-textGray transition-colors"
+                      href="#"
+                      >Neurocritical Care</a
+                    >
+                  </li>
+                  <li class="department-minimenu-item">
+                    <a
+                      class="text-[18px] text-textBlue hover:text-textGray transition-colors"
+                      href="#"
+                      >Neuro Oncology</a
+                    >
+                  </li>
+                  <li class="department-minimenu-item">
+                    <a
+                      class="text-[18px] text-textBlue hover:text-textGray transition-colors"
+                      href="#"
+                      >Geriatric Neurology</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <button
+                class="w-4/6 mt-2 lg:w-1/4 px-6 py-4 text-[#fff] border-2 bg-textBlue rounded-3xl hover:bg-gray-600 duration-200 self-center lg:self-auto"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="blog" class="blog my-20">
+        <div
+          class="blog-container container mx-auto px-12 flex flex-col gap-y-14"
+        >
+          <div class="blog-header">
+            <h2
+              class="text-[28px] text-center lg:text-left lg:text-[42px] text-gray-700 font-extrabold"
+            >
+              Our Recent Posts
+            </h2>
+          </div>
+          <div
+            class="posts-container grid grid-cols-1 justify-center gap-y-8 lg:grid-cols-3 lg:gap-x-6"
+          >
+            <div class="post flex flex-col items-center gap-y-6">
+              <div class="post-img relative">
+                <img src="assets/img/blog/img-1.png" class="rounded" />
+                <span
+                  class="text-slate-100 bg-[#1e7b7c] p-2 absolute bottom-0 rounded-sm"
+                  >Medical</span
+                >
+              </div>
+              <div class="post-text flex flex-col items-center pl-4 gap-y-2">
+                <span class="text-[18px] text-gray-800">Jan 2, 2023</span>
+                <h5
+                  class="capitalize text-[26px] text-gray-700 text-center font-extrabold hover:text-textBlue transition-colors cursor-pointer"
+                >
+                  10 foods to avoid for your heart health
+                </h5>
+                <p class="text-gray-500 text-[17px] text-center">
+                  It's normal to feel anxiety, worry and grief any time you're
+                  diagnosed with a condition that's certainly true...
+                </p>
+                <a
+                  href="#"
+                  class="underline text-gray-700 hover:text-[#1e7b7c] transition-colors self-center"
+                  >Read More</a
+                >
+              </div>
+            </div>
+            <div class="post flex flex-col gap-y-6 items-center">
+              <div class="post-img relative">
+                <img src="assets/img/blog/img-2.png" class="rounded" />
+                <span
+                  class="text-slate-100 bg-[#1e7b7c] p-2 absolute bottom-0 rounded-sm"
+                  >Mental Health</span
+                >
+              </div>
+              <div class="post-text flex flex-col items-center pl-4 gap-y-2">
+                <span class="text-[18px] text-gray-800">Jan 3, 2023</span>
+                <h5
+                  class="capitalize text-[26px] text-gray-700 text-center font-extrabold hover:text-textBlue transition-colors cursor-pointer"
+                >
+                  How to be relax & calm in hard situations
+                </h5>
+                <p class="text-gray-500 text-[17px] text-center">
+                  It's normal to feel anxiety, worry and grief any time you're
+                  diagnosed with a condition that's certainly true...
+                </p>
+                <a
+                  href="#"
+                  class="underline text-gray-700 hover:text-[#1e7b7c] transition-colors self-center"
+                  >Read More</a
+                >
+              </div>
+            </div>
+            <div class="post flex flex-col gap-y-6 items-center">
+              <div class="post-img relative">
+                <img src="assets/img/blog/img-3.png" class="rounded" />
+                <span
+                  class="text-slate-100 bg-[#1e7b7c] p-2 absolute bottom-0 rounded-sm"
+                  >Dental Health</span
+                >
+              </div>
+              <div class="post-text flex flex-col items-center pl-4 gap-y-2">
+                <span class="text-[18px] text-gray-800">Jan 4, 2023</span>
+                <h5
+                  class="capitalize text-[26px] text-gray-700 text-center font-extrabold hover:text-textBlue transition-colors cursor-pointer"
+                >
+                  Best ways to make your teeth strong
+                </h5>
+                <p class="text-gray-500 text-[17px] text-center">
+                  It's normal to feel anxiety, worry and grief any time you're
+                  diagnosed with a condition that's certainly true...
+                </p>
+                <a
+                  href="#"
+                  class="underline text-gray-700 hover:text-[#1e7b7c] transition-colors self-center"
+                  >Read More</a
+                >
+              </div>
+            </div>
+          </div>
+          <button
+            class="w-5/6 lg:w-1/5 px-6 py-4 text-[#fff] bg-textBlue rounded-3xl hover:bg-gray-600 duration-200 self-center lg:self-auto"
+          >
+            READ MORE BLOGS
+          </button>
+        </div>
+      </section>
+
+      <section id="brands" class="brands mt-16">
+        <div
+          class="brands-container container mx-auto flex flex-col lg:flex-row justify-center items-center gap-y-16 lg:gap-x-16 py-8"
+        >
+          <div
+            class="brand brand-1 cursor-pointer opacity-85 hover:opacity-100"
+          >
+            <img src="assets/img/brands/brand-1.svg" />
+          </div>
+          <div
+            class="brand brand-2 cursor-pointer opacity-85 hover:opacity-100"
+          >
+            <img src="assets/img/brands/brand-2.svg" />
+          </div>
+          <div
+            class="brand brand-3 cursor-pointer opacity-85 hover:opacity-100"
+          >
+            <img src="assets/img/brands/brand-3.svg" />
+          </div>
+          <div
+            class="brand brand-4 cursor-pointer opacity-85 hover:opacity-100"
+          >
+            <img src="assets/img/brands/brand-4.svg" />
+          </div>
+          <div
+            class="brand brand-5 cursor-pointer opacity-85 hover:opacity-100"
+          >
+            <img src="assets/img/brands/brand-5.svg" />
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="newsletter"
+        class="newsletter bg-[url('/assets/img/newsletter/bg.svg')] min-h-[400px] flex justify-center items-center mb-[100px]"
+      >
+        <div
+          class="newsletter-container container mx-auto flex flex-col lg:flex-row items-center justify-center gap-y-8 lg:gap-x-5 pl-6"
+        >
+          <div
+            class="newsletter-left basis-1/2 flex flex-col justify-center items-center lg:items-start gap-y-8"
+          >
+            <small class="text-[18px] text-slate-200"> OUR NEWSLETTER </small>
+            <h2
+              class="text-slate-100 text-[34px] lg:text-[64px] capitalize font-extrabold text-center"
+            >
+              Subscribe us to get more updates
+            </h2>
+          </div>
+          <div
+            class="newsletter-right basis-1/2 flex justify-center items-center relative"
+          >
+            <div class="relative w-[350px] lg:w-4/6">
+              <input
+                type="text"
+                placeholder="Your Email Address"
+                class="py-4 w-full rounded-[60px] px-3 border-[3px] outline-none text-slate-100 placeholder-slate-100 border-slate-100 bg-transparent ps-4"
+              />
+              <button
+                class="px-1 lg:px-6 bg-slate-100 text-gray-600 rounded-3xl w-2/5 hover:text-slate-100 hover:bg-gray-600 duration-700 absolute inset-y-0 right-[0] hover:w-full"
+              >
+                SUBSCRIBE
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div
+          class="footer-container w-5/6 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-y-5 lg:gap-x-5 items-center justify-center"
+        >
+          <div
+            class="footer-section py-16 flex items-center justify-center lg:items-start flex-col gap-y-4 text-gray-400"
+          >
+            <div>
+              <img src="assets/img/header/logo.svg" />
+            </div>
+            <p class="text-gray-400 text-[17px] text-center lg:text-left">
+              Elit adipi massa diam in dignissim. Sagittis pulvinar ut dis
+              venenatis nunc nunc.
+            </p>
+            <div class="address-and-info flex flex-col gap-y-3 text-[18px]">
+              <div>
+                <i class="fa fa-map-marker text-textBlue mr-2"></i>
+                <span>123 Arling, Miola, NY</span>
+              </div>
+              <div>
+                <i class="fa fa-envelope-o text-textBlue mr-2"></i>
+                <span
+                  class="text-gray-600 hover:text-[#1ccbcf] transition-colors"
+                  >Info@yourinfo.com</span
+                >
+              </div>
+              <div>
+                <i class="fa fa-phone text-textBlue mr-2"></i>
+                <span>(+487) 384 9452</span>
+              </div>
+            </div>
+            <div class="social-media text-[24px] flex gap-x-4">
+              <i
+                class="fa fa-facebook-official cursor-pointer opacity-80 text-textBlue hover:text-[#4267B2] hover:opacity-100 transition-colors"
+              ></i>
+              <i
+                class="fa fa-twitter cursor-pointer opacity-80 text-textBlue hover:text-[#1DA1F2] hover:opacity-100 transition-colors"
+              ></i>
+              <i
+                class="fa fa-instagram cursor-pointer opacity-80 text-textBlue hover:text-[#C13584] hover:opacity-100 transition-colors"
+              ></i>
+              <i
+                class="fa fa-youtube-play cursor-pointer opacity-80 text-textBlue hover:text-[#FF0000] hover:opacity-100 transition-colors"
+              ></i>
+              <i
+                class="fa fa-linkedin cursor-pointer opacity-80 text-textBlue hover:text-[#0a66c2] hover:opacity-100 transition-colors"
+              ></i>
+            </div>
+          </div>
+          <div class="footer-section h-4/5 pt-5 lg:pl-4 flex flex-col gap-y-8">
+            <h5
+              class="text-gray-700 font-extrabold text-[22px] text-center lg:text-left"
+            >
+              Quick Links
+            </h5>
+            <ul
+              class="grid grid-cols-2 gap-4 justify-items-center lg:justify-items-start"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-textBlue transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-textBlue transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-textBlue transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-textBlue transition-colors"
+                  >Booking</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-textBlue transition-colors"
+                  >Testimonial</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-textBlue transition-colors"
+                  >Our Team</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-textBlue transition-colors"
+                  >Faqs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-textBlue transition-colors"
+                  >Department</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-600 hover:text-textBlue transition-colors"
+                  >Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-section h-4/5 pt-5 flex flex-col gap-y-8">
+            <h5 class="text-gray-700 font-extrabold text-[22px] text-center">
+              Opening Hours
+            </h5>
+            <div>
+              <div
+                class="flex justify-around gap-x-8 border-b-[1px] border-gray-400 py-3 text-[17px] hover:gap-x-16 duration-200"
+              >
+                <span>Monday - Thursday</span>
+                <span class="text-textBlue">8:00 am - 6:00 pm</span>
+              </div>
+              <div
+                class="flex justify-around gap-x-8 border-b-[1px] border-gray-400 py-3 text-[17px] hover:gap-x-16 duration-200"
+              >
+                <span>Friday - Saturday</span>
+                <span class="text-textBlue">10:00 am - 4:00 pm</span>
+              </div>
+              <div
+                class="flex justify-around gap-x-8 border-b-[1px] border-gray-400 py-3 text-[17px] hover:gap-x-16 duration-200"
+              >
+                <span>Sunday</span>
+                <span class="text-textBlue">Emergency only</span>
+              </div>
+              <div
+                class="flex justify-around gap-x-8 border-b-[1px] border-gray-400 py-3 text-[17px] hover:gap-x-16 duration-200"
+              >
+                <span>Personal</span>
+                <span class="text-textBlue">7:00 pm - 9:00 pm</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="copyright w-5/6 mx-auto py-4 lg:border-t-2 border-gray-300 mt-10 lg:mt-0 text-center"
+        >
+          <span class="text-gray-500 text-[18px]">
+            &copy; 2023 Insove - All rights reserved <br />
+            Created By
+            <a
+              href="https://jobvision.ir/cv/42224036-232659"
+              target="_blank"
+              class="text-textBlue opacity-60 hover:opacity-100 transition-opacity"
+              >Ali Eshkevari</a
+            >
+          </span>
+        </div>
+      </footer>
+      <div
+        class="btns flex justify-end gap-x-8 py-4 text-slate-200 text-[20px] w-1/5 fixed z-50 bottom-3 left-[72%]"
+      >
+        <button
+          class="bg-blue-400 flex items-center justify-center p-6 rounded-full duration-300 hover:scale-[1.1] active:scale-95 border-4 border-slate-100"
+        >
+          <i class="fa fa-shopping-cart"></i>
+        </button>
+        <button
+          class="bg-yellow-400 flex items-center justify-center p-6 rounded-full duration-300 hover:scale-[1.1] active:scale-95 border-4 border-slate-100"
+        >
+          <i class="fa fa-reddit-alien"></i>
+        </button>
+      </div>
+    </main>
+  </body>
+</html>
